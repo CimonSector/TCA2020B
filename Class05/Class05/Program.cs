@@ -23,14 +23,14 @@ namespace newtype
             float bmi = CalculateBMI(weight, height);
 
             Console.WriteLine("BMI" + bmi);
-
+          
         }
 
         
         static float GetInputAndParse(string defaultInput, string guideText)
         {
             float parseResult = 0f;
-            bool parseSuccess = false;
+            bool parseSuccess = float.TryParse(defaultInput,out parseResult);
             while (!parseSuccess)
             {
                 Console.WriteLine(guideText);
